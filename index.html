@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="portrait">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -12,28 +12,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Player Music</title>
+    <title>Music Player</title>
   </head>
   <body>
     <div id="container">
-      <img src="" alt="Capa Album" />
-      <div id="heading">
-        <p>Acorda Devinho</p>
-        <p>Banda Rocketseat</p>
-      </div>
-      <div id="player large">
-        <button id="play-back"></button>
-        <button id="play"></button>
-        <button id="play-forward"></button>
-      </div>
-      <div id="timer">
-        <div></div>
-        <div></div>
-        <div id="tempo">
-          <p>03:20</p>
-          <p>00:12</p>
+      <div id="main">
+        <div id="music">
+          <img src="./assets/capa_album.png " alt="Capa Album" />
+          <div id="heading">
+            <h1>Acorda Devinho</h1>
+            <h2>Banda Rocketseat</h2>
+          </div>
+        </div>
+        <div id="player">
+          <button id="play-back">
+            <img src="./assets/play-back.svg" alt="play back" />
+          </button>
+          <button id="play">
+            <img src="./assets/play.svg" alt="play" />
+          </button>
+          <button id="play-forward">
+            <img src="./assets/play-forward.svg" alt="play forward" />
+          </button>
+        </div>
+        <div id="timer">
+          <div id="total"></div>
+          <div id="atual"></div>
+          <div id="tempo">
+            <p>03:20</p>
+            <p>00:12</p>
+          </div>
+        </div>
+        <div id="resolution">
+          <button onclick="toLandscape()">
+            <ion-icon name="tablet-landscape-sharp"></ion-icon>
+            <p>landscape</p>
+          </button>
+          <button onclick="toSmall()">
+            <ion-icon name="phone-landscape-sharp"></ion-icon>
+            <p>small</p>
+          </button>
         </div>
       </div>
     </div>
   </body>
+  <script src="script.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
 </html>

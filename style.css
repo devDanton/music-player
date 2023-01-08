@@ -4,19 +4,173 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text-color: #E1E1E6;
+  --status-player-color: rgba(217, 217, 217, 1);
+  --bg-player-color: rgba(217, 217, 217, 0.3);
+  --bg-body-color: #0F0D13;
+  --bg-main-color: #2A2141;
+  --bg-button: #562DAB;
+  --flex-direction: column;
+  --wv-img: 100%;
+  --height-main: 90vh;
+  --padding-main: 38px;
+  --display-timer: flex;
+}
+
+.landscape {
+  --flex-direction: row;
+  --wv-img: 84.03px;
+  --height-main: 300px;
+  --padding-main: 29px;
+  --display-timer: flex;
+}
+
+.small {
+  --display-timer: none;
+}
+
 body * {
   font-family: 'Inter', sans-serif;
   color: var(--text-color);
-  color: antiquewhite;
 }
 
 body {
   height: 100vh;
+  background: var(--bg-body-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #container {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main {
+  height: var(--height-main);
   max-width: 588px;
-  background: black;
-  display: grid;
+  padding: var(--padding-main);
+  margin: 10px;
+  background: var(--bg-main-color);
+  border-radius: 9.60297px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  justify-content: center;
+}
+
+#main #music img {
+  max-width: 100%;
+  border-radius: 6px;
+  order: 1;
+
+}
+
+#main #music #heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 9.6px;
+  order: 2;
+}
+
+#music {
+  display: flex;
+  flex-direction: var(--flex-direction);
+  gap: 29px;
+}
+
+#music img {
+  width: var(--wv-img);
+}
+
+#main #player {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50.42px;
+  order: 3;
+
+}
+
+#main #player button {
+  height: 29px;
+  width: 29px;
+  background: none;
+  border-style: none;
+
+}
+
+#timer {
+  display: var(--display-timer);
+  flex-direction: column;
+  gap: 9.6px;
+  order: 4;
+
+  position: relative;
+}
+
+#timer #total {
+  height: 6px;
+  width: 100%;
+  background-color: var(--bg-player-color);
+
+  position: absolute;
+  z-index: 0;
+}
+
+#timer #atual {
+  background-color: var(--status-player-color);
+  height: 6px;
+  width: 70%;
+  z-index: 1;
+}
+
+#timer #tempo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#resolution {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 25px;
+
+  order: 5;
+}
+
+#resolution button {
+  background: none;
+  border-style: none;
+}
+
+#resolution button ion-icon {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  margin: auto;
+}
+
+
+@media (max-width: 456px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+}
+
+@keyframes slow {
+  from {}
+
+  to {}
 }
