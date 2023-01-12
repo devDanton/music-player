@@ -6,36 +6,36 @@
 
 :root {
   --text-color: #E1E1E6;
-  --status-player-color: rgba(217, 217, 217, 1);
+  --status-player-color: rgba(217, 217, 217, 0.8);
   --bg-player-color: rgba(217, 217, 217, 0.3);
   --bg-body-color: #0F0D13;
   --bg-main-color: #2A2141;
   --bg-button-color: rgba(217, 217, 217, 0.3);
   --flex-direction: column;
-  --wv-img: 100%;
-  --height-main: 90vh;
-  --padding-main: 38px;
+  --w-img: 198px;
+  --h-img: 190px;
+  --padding-main: 50px 38px;
   --display-timer: flex;
 }
 
 .landscape {
   --flex-direction: row;
-  --wv-img: 84.03px;
-  --height-main: 350px;
+  --w-img: 84px;
+  --h-img: 84px;
   --padding-main: 29px;
   --display-timer: flex;
 }
 
 .small {
   --flex-direction: row;
-  --wv-img: 84.03px;
-  --height-main: 350px;
+  --w-img: 84px;
+  --h-img: 84px;
   --padding-main: 29px;
   --display-timer: none;
 }
 
 body * {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--text-color);
 }
 
@@ -53,14 +53,17 @@ body {
   flex-direction: column;
   align-items: center;
 } */
+#main * {
+  /* border: 1px solid red; */
+}
 
 #main {
-  height: var(--height-main);
-  max-width: 588px;
+  height: max-content;
+  max-width: 270px;
   padding: var(--padding-main);
   margin: 10px;
   background: var(--bg-main-color);
-  border-radius: 9.60297px;
+  border-radius: 9px;
 
   display: flex;
   flex-direction: column;
@@ -74,41 +77,48 @@ body {
   gap: 29px;
 }
 
-#main #music img {
-  max-width: 100%;
+#music img {
   border-radius: 6px;
+  width: var(--w-img);
+  height: var(--h-img);
   order: 1;
-
+  margin: auto;
+  object-fit: cover;
 }
 
-#main #music #heading {
+#music #heading {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 9.6px;
   order: 2;
 }
 
-
-#music img {
-  width: var(--wv-img);
+#heading h1 {
+  font-size: 24px;
+  font-weight: 700;
 }
 
-#main #player {
+#heading p {
+  font-size: 19px;
+  font-weight: 400;
+  opacity: 0.67;
+}
+
+#player {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 50.42px;
+  justify-content: space-between;
   order: 3;
 
 }
 
-#main #player button {
-  height: 30px;
+#player button {
+  height: 29px;
+  width: 29px;
   background: none;
   border-style: none;
   border-radius: 10px;
-  width: 40px;
+
 }
 
 #main #player button:hover {
@@ -137,7 +147,7 @@ body {
 #timer #atual {
   background-color: var(--status-player-color);
   height: 6px;
-  width: 70%;
+  width: 80%;
   z-index: 1;
 }
 
@@ -178,15 +188,7 @@ body {
 }
 
 
-@media (max-width: 456px) {
-  h1 {
-    font-size: 18px;
-  }
-
-  h2 {
-    font-size: 15px;
-  }
-}
+@media (max-width: 320px) {}
 
 @keyframes slow {
   from {}
