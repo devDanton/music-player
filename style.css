@@ -53,12 +53,9 @@ body {
   flex-direction: column;
   align-items: center;
 } */
-#main * {
-  /* border: 1px solid red; */
-}
 
 #main {
-  height: max-content;
+  max-height: 585px;
   max-width: 270px;
   padding: var(--padding-main);
   margin: 10px;
