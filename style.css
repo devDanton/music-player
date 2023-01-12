@@ -57,7 +57,7 @@ body {
   max-height: 585px;
   max-width: 270px;
   padding: var(--padding-main);
-  margin: 60px 10px;
+  margin: 30px 10px;
   background: var(--bg-main-color);
   border-radius: 9px;
 
