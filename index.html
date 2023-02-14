@@ -1,72 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="portrait">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="assets/icon.svg" type="image/x-icon" />
-    <title>Music Player</title>
-  </head>
-  <body>
-    <div id="container">
-      <div id="main">
-        <div id="music">
-          <img
-            src="https://images.unsplash.com/photo-1466232373731-46205f0b668e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-            alt="Capa album"
-          />
-          <div id="heading">
-            <h1>Acorda Devinho</h1>
-            <p>Banda Rocketseat</p>
-          </div>
-        </div>
-        <div id="player">
-          <button id="play-back">
-            <img src="./assets/play-back.svg" alt="play back" />
-          </button>
-          <button id="play">
-            <img src="./assets/play.svg" alt="play" />
-          </button>
-          <button id="play-forward">
-            <img src="./assets/play-forward.svg" alt="play forward" />
-          </button>
-        </div>
-        <div id="timer">
-          <div id="total"></div>
-          <div id="atual"></div>
-          <div id="tempo">
-            <p>03:20</p>
-            <p>00:12</p>
-          </div>
-        </div>
-        <div id="resolution">
-          <button onclick="toLandscape()">
-            <ion-icon name="phone-landscape-outline"></ion-icon>
-            <p>landscape</p>
-          </button>
-          <button onclick="toSmall()">
-            <ion-icon name="tablet-landscape-outline"></ion-icon>
-            <p>small</p>
-          </button>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="assets/icon.svg" type="image/x-icon" />
+  <title>Music Player</title>
+</head>
+
+<body>
+  <div id="container">
+    <div id="player-1">
+      <div class="music">
+        <img
+          src="https://images.unsplash.com/photo-1466232373731-46205f0b668e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+          alt="Capa album" />
+      </div>
+      <div class="heading">
+        <h1>Acorda Devinho</h1>
+        <p>Banda Rocketseat</p>
+      </div>
+      <div class="controls">
+        <button class="play-back">
+          <img src="./src/assets/play-back.svg" alt="play back" />
+        </button>
+        <button class="play">
+          <img src="./src/assets/play.svg" alt="play" />
+        </button>
+        <button class="play-forward">
+          <img src="./src/assets/play-forward.svg" alt="play forward" />
+        </button>
+      </div>
+      <div class="timer">
+        <div class="total"></div>
+        <div class="atual"></div>
+        <div class="tempo">
+          <p>03:20</p>
+          <p>00:12</p>
         </div>
       </div>
     </div>
-  </body>
-  <script src="script.js"></script>
-  <script
-    type="module"
-    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-  ></script>
+
+    <div id="player-2">
+      <div class="music">
+        <img
+          src="https://images.unsplash.com/photo-1466232373731-46205f0b668e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+          alt="Capa album" />
+        <div class="heading">
+          <h1>Acorda Devinho</h1>
+          <p>Banda Rocketseat</p>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="play-back">
+          <img src="./src/assets/play-back.svg" alt="play back" />
+        </button>
+        <button class="play">
+          <img src="./src/assets/play.svg" alt="play" />
+        </button>
+        <button class="play-forward">
+          <img src="./src/assets/play-forward.svg" alt="play forward" />
+        </button>
+      </div>
+      <div class="timer">
+        <div class="total"></div>
+        <div class="atual"></div>
+        <div class="tempo">
+          <p>03:20</p>
+          <p>00:12</p>
+        </div>
+      </div>
+    </div>
+    <div id="player-3">
+      <div class="music">
+        <img
+          src="https://images.unsplash.com/photo-1466232373731-46205f0b668e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+          alt="Capa album" />
+        <div class="heading">
+          <h1>Acorda Devinho</h1>
+          <p>Banda Rocketseat</p>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="play-back">
+          <img src="./src/assets/play-back.svg" alt="play back" />
+        </button>
+        <button class="play">
+          <img src="./src/assets/play.svg" alt="play" />
+        </button>
+        <button class="play-forward">
+          <img src="./src/assets/play-forward.svg" alt="play forward" />
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </html>

@@ -18,22 +18,6 @@
   --display-timer: flex;
 }
 
-.landscape {
-  --flex-direction: row;
-  --w-img: 84px;
-  --h-img: 84px;
-  --padding-main: 29px;
-  --display-timer: flex;
-}
-
-.small {
-  --flex-direction: row;
-  --w-img: 84px;
-  --h-img: 84px;
-  --padding-main: 29px;
-  --display-timer: none;
-}
-
 body * {
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
@@ -47,17 +31,26 @@ body {
   justify-content: center;
 }
 
-/* #container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
+#container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-areas:
+    "player-1 player-2"
+    "player-1 player-3";
+  grid-template-rows: 0fr 0fr;
+  grid-template-columns: 0fr 0fr;
+  gap: 32px;
+  margin: 0 10px;
+}
 
-#main {
-  max-height: 585px;
+#player-1 {
+  grid-area: player-1;
+  max-height: 500px;
   max-width: 270px;
-  padding: var(--padding-main);
-  margin: 30px 10px;
+  padding: 38px;
   background: var(--bg-main-color);
   border-radius: 9px;
 
@@ -67,40 +60,40 @@ body {
   justify-content: center;
 }
 
-#main #music {
+.music {
   display: flex;
   flex-direction: var(--flex-direction);
   gap: 29px;
 }
 
-#music img {
+.music img {
   border-radius: 6px;
-  width: var(--w-img);
-  height: var(--h-img);
+  width: 190px;
+  height: 190px;
   order: 1;
   margin: auto;
   object-fit: cover;
 }
 
-#music #heading {
+.music .heading {
   display: flex;
   flex-direction: column;
   gap: 9.6px;
   order: 2;
 }
 
-#heading h1 {
+.heading h1 {
   font-size: 24px;
   font-weight: 700;
 }
 
-#heading p {
+.heading p {
   font-size: 19px;
   font-weight: 400;
   opacity: 0.67;
 }
 
-#player {
+.controls {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -108,7 +101,7 @@ body {
 
 }
 
-#player button {
+.controls button {
   height: 29px;
   width: 29px;
   background: none;
@@ -117,12 +110,12 @@ body {
 
 }
 
-#main #player button:hover {
+.controls button:hover {
   background: var(--bg-button-color);
   transition: background 0.2s;
 }
 
-#timer {
+.timer {
   display: var(--display-timer);
   flex-direction: column;
   gap: 9.6px;
@@ -131,7 +124,7 @@ body {
   position: relative;
 }
 
-#timer #total {
+.timer .total {
   height: 6px;
   width: 100%;
   background-color: var(--bg-player-color);
@@ -140,54 +133,95 @@ body {
   z-index: 0;
 }
 
-#timer #atual {
+.timer .atual {
   background-color: var(--status-player-color);
   height: 6px;
   width: 80%;
   z-index: 1;
 }
 
-#timer #tempo {
+.timer .tempo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#resolution {
+.timer .tempo p {
+  color: #C4C4CC;
+  font-weight: 400;
+}
+
+#player-2 {
+  grid-area: player-2;
+  width: 358px;
+  height: 266px;
+  padding: 29px;
   display: flex;
+  flex-direction: column;
+  background: var(--bg-main-color);
+  border-radius: 9px;
+  gap: 29px;
+}
+
+#player-2 .music {
+  display: flex;
+  flex-direction: row;
+}
+
+#player-2 .music img {
+  width: 84px;
+  height: 84px;
+}
+
+#player-2 .heading {
+  display: flex;
+  justify-content: center;
+}
+
+#player-2 .controls {
   justify-content: space-evenly;
-  align-items: center;
-  font-size: 25px;
-
-  order: 5;
 }
 
-#resolution button {
-  background: none;
-  border-style: none;
-  border-radius: 10px;
-  height: 50px;
-  width: 70px;
-}
-
-#resolution button:hover {
-  background: var(--bg-button-color);
-  transition: background 0.2s;
-
-}
-
-#resolution button ion-icon {
+#player-3 {
+  grid-area: player-3;
+  width: 358px;
+  height: 200px;
+  padding: 29px;
   display: flex;
-  align-items: center;
-  font-size: 24px;
-  margin: auto;
+  flex-direction: column;
+  background: var(--bg-main-color);
+  border-radius: 9px;
+  gap: 29px;
 }
 
+#player-3 .music {
+  display: flex;
+  flex-direction: row;
+}
 
-@media (max-width: 320px) {}
+#player-3 .music img {
+  width: 84px;
+  height: 84px;
+}
 
-@keyframes slow {
-  from {}
+#player-3 .heading {
+  display: flex;
+  justify-content: center;
+}
 
-  to {}
+#player-3 .controls {
+  justify-content: space-evenly;
+}
+
+@media (max-width: 684px) {
+  #container {
+    grid-template-areas:
+      "player-1"
+      "player-2"
+      "player-3";
+    height: max-content;
+    margin: 20px 0;
+    justify-items: center;
+
+  }
 }
